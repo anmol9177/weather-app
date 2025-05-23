@@ -5,19 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="mainContainer">
         <div class="container">
             <div class="header">
-                <div>Weather App</div>
+                <h1>Weather App</h1>
+                <div class="search-box">
+                    <input type="text" placeholder="Enter city name" id="search-input">
+                    <button id="search-button">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <div class="unit-toggle">
+                    <button id="celsius" class="active">°C</button>
+                    <button id="fahrenheit">°F</button>
+                </div>
             </div>
-            <div class="box">
-                <div class="picContainer">
-                    <img src="./images/cloudy.png" alt="" srcset="">
+            <div class="weather-info">
+                <div class="current-weather">
+                    <div class="weather-icon">
+                        <img src="./images/cloudy.png" alt="Weather Icon" id="weather-icon">
+                    </div>
+                    <div class="weather-details">
+                        <h2 class="city">City Name</h2>
+                        <div class="temperature">
+                            <span id="temp">--</span>
+                            <span class="unit">°C</span>
+                        </div>
+                        <p class="description">Weather Description</p>
+                        <div class="additional-info">
+                            <p>Humidity: <span id="humidity">--%</span></p>
+                            <p>Wind Speed: <span id="wind-speed">-- km/h</span></p>
+                            <p>Feels Like: <span id="feels-like">--°C</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="forecast">
+                    <h3>5-Day Forecast</h3>
+                    <div class="forecast-container" id="forecast-container">
+                        <!-- Forecast items will be added here dynamically -->
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
